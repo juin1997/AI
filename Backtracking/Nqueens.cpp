@@ -2,7 +2,7 @@
 #include<math.h>
 int a[50],n,t=1;
 
-bool CanPlace(int a[],int num)
+bool CanPlace(int a[],int num)//determine if the queen can be placed
 {
     int i;
 	for(i=1;i<num;i++)
@@ -13,7 +13,7 @@ bool CanPlace(int a[],int num)
 	return true;
 }
 
-void Output()
+void Output()    //output the chessboard
 {
     int i,j;
     printf("Solution NO.%d\n",t++);
@@ -42,7 +42,7 @@ void Nqueens(int num)
 			if(num==n) 
                 Output();
 			else  
-                Nqueens(num+1);
+                Nqueens(num+1);//use recurrence to backtrack
 		}
 	}
 }
