@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<math.h>
-int a[50],n,t=1;
+int queen[50],n,t=1;
 
-bool CanPlace(int a[],int num)//determine if the queen can be placed
+bool CanPlace(int queen[],int num)//determine if the queen can be placed
 {
     int i;
 	for(i=1;i<num;i++)
 	{
-		if(abs(a[i]-a[num])==abs(i-num) || a[i]==a[num])
+		if(abs(queen[i]-queen[num])==abs(i-num) || queen[i]==queen[num])
 			return false;
 	}
 	return true;
@@ -21,7 +21,7 @@ void Output()    //output the chessboard
     {
         for(j=1;j<=n;j++)
         {
-            if(j==a[i]) 
+            if(j==queen[i]) 
                 printf("Q ");
             else
                 printf("* ");
@@ -36,8 +36,8 @@ void Nqueens(int num)
     int i;
 	for(i=1;i<=n;i++)
 	{
-		a[num]=i;
-		if(CanPlace(a,num)) 
+		queen[num]=i;
+		if(CanPlace(queen,num)) 
 		{
 			if(num==n) 
                 Output();
